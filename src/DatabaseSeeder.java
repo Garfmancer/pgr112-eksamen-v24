@@ -76,7 +76,7 @@ public class DatabaseSeeder {
                             case "Våpen" -> discoveryService.insertWeapon(objectFactory.createWeapon(base, reader), connection);
                         }
 
-                        // skip separator
+                        // hoppe over separator
                         reader.nextLine();
                     }
                 }
