@@ -229,7 +229,7 @@ public class DiscoveryService implements IDiscoveryService {
         StringBuilder baseCoinQuery = new StringBuilder(SELECT_COINS);
 
         if(ageHigherThan != null) {
-            baseCoinQuery.append(" AND m.Antatt_årstall > ?");
+            baseCoinQuery.append(" and m.Antatt_årstall > ?");
         }
 
         try(PreparedStatement statement = connection.prepareStatement(baseCoinQuery.toString())) {
