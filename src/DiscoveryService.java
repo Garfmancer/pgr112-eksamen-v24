@@ -169,7 +169,6 @@ public class DiscoveryService implements IDiscoveryService {
                 System.out.printf("Antall funnet gjenstander: %s%n", total);
             }
 
-
         }
     }
 
