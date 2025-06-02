@@ -114,7 +114,7 @@ public class ItemDescription {
 
     private String getDiscovererContact(){
         return String.format(
-                "Kontaktinfomasjon: %s tlf: %s epost: %s",
+                "Kontaktinformasjon: %s tlf: %s epost: %s",
                 discovererName,
                 discovererPhoneNumber,
                 discovererEmail
