@@ -28,13 +28,13 @@ public class DiscoveryService implements IDiscoveryService {
     public void truncateTables(Connection connection) throws SQLException {
 
         try(Statement statement = connection.createStatement()) {
-            statement.execute("SET FOREIGN_KEY_CHECKS=0");
-            statement.execute("TRUNCATE TABLE museum");
-            statement.execute("TRUNCATE TABLE mynt");
-            statement.execute("TRUNCATE TABLE person");
-            statement.execute("TRUNCATE TABLE smykke");
-            statement.execute("TRUNCATE TABLE vaapen");
-            statement.execute("SET FOREIGN_KEY_CHECKS=1");
+            statement.execute("set foreign_key_checks=0");
+            statement.execute("truncate table funn.museum");
+            statement.execute("truncate table funn.mynt");
+            statement.execute("truncate table funn.person");
+            statement.execute("truncate table funn.smykke");
+            statement.execute("truncate table funn.vaapen");
+            statement.execute("set foreign_key_checks=1");
         }
 
     }
@@ -267,7 +267,7 @@ public class DiscoveryService implements IDiscoveryService {
         StringBuilder jewelryQuery = new StringBuilder(SELECT_JEWELRY);
 
         if(ageHigherThan != null) {
-            jewelryQuery.append(" AND s.Antatt_årstall > ?");
+            jewelryQuery.append(" and s.Antatt_årstall > ?");
         }
 
         try(PreparedStatement statement = connection.prepareStatement(jewelryQuery.toString())) {
@@ -305,7 +305,7 @@ public class DiscoveryService implements IDiscoveryService {
         StringBuilder weaponsQuery = new StringBuilder(SELECT_WEAPONS);
 
         if(ageHigherThan != null) {
-            weaponsQuery.append(" AND v.Antatt_årstall > ?");
+            weaponsQuery.append(" and v.Antatt_årstall > ?");
         }
 
         try(PreparedStatement statement = connection.prepareStatement(weaponsQuery.toString())) {
