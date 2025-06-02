@@ -5,7 +5,7 @@ import java.util.Scanner;
 abstract class FactoryBase {
 
 
-    public Person createPerson(Scanner reader){
+    protected Person createPerson(Scanner reader){
         return new Person(
                 Integer.parseInt(reader.nextLine()),
                 reader.nextLine(),
