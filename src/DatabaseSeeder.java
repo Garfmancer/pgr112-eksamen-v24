@@ -85,8 +85,7 @@ public class DatabaseSeeder {
             } catch (SQLException exception) {
                 connection.rollback();
                 throw new RuntimeException(exception);
-            }
-            finally {
+            } finally {
                 connection.setAutoCommit(autoCommit);
             }
         }
